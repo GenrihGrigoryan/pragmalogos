@@ -1,5 +1,5 @@
-title:               Начало Умозрения
-alias:               Начало
+title:               Прагмалогия
+alias:               Прагмалогия
 include:             ['_pages', '.github/workflows/python.yaml']
 exclude:             ['_notes/Шаблоны', '_notes/Personal']
 
@@ -12,7 +12,7 @@ favicon: assets/favicon.png
 # You may need to change the base URL depending on your deploy configuration.
 # Specifically, when using GitHub Pages, the baseurl should point to where GitHub
 # Pages deploys your repository (which is usually the repository name).
-url: "https://origin.genrih.space"
+url: "http://pragmalogos.genrih.space/"
 baseurl: 
 
 #permalink:           pretty
