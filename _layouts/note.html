@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+
+<article>
+
+{%- comment -%}
+
+  <div>
+    <h1>{{ page.title }}</h1>
+
+
+
+    <!--<h5 style="max-width: 48px; text-align: center; border: 1px solid #ffffff; border-radius: 4em;"> <a href="/{{page.tag}}">{{page.tag}}</a></h6>-->
+    <!--
+    <div style="text-align: center; margin-top: 0px; padding-top: 0px; margin-bottom: 40px;">in category: {{page.categories}} </div>
+    -->
+    <!--
+    <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}
+      Last updated on {{ page.last_modified_at | date: "%B %-d, %Y" }}
+      {% endif %}
+    </time>
+    -->
+
+
+  </div>
+  {%- endcomment -%}
+
+
+    <content {% if page.book or page.tag[0] == "meditation" or page.tag[0] == "commentarium" or page.tag[0] == "fabula" or page.tag[0] == "fragmentum" or page.tag[0] == "hmphilosophy" or page.tag[0] == "hmanalysis" or page.tag[0] == "hmglossary" or page.tag[0] == "hmcycles" %}id = "book"{% endif %} >
+      {{ content }}
+    </content>
+
+    <script type="text/javascript" src="assets/lightbox.js"></script>
+    <link rel="stylesheet" href="assets/lightbox.css">
+
+    {% if page.zoom or page.tags[0] == "abstract" or page.tags[0] == "shape" or page.tags[0] == "concept" or page.tags[0] == "visio" %}
+    <script src="assets/zooming.min.js"></script>
+    <script>
+      new Zooming().listen('img')
+    </script>
+    {% endif %}
+
+
+    {% include emded.html %}
+
+    {% include backlinks_light_grouped_light.html %}
+
+    {%- comment -%}
+    {% include backlinks_light_grouped.html %}
+    {%- endcomment -%}
+
+    {%- comment -%}
+    {% include backlinks_light.html %}
+
+    {% include backlinks.html %}
+    {% include links.html %}
+    {% include linked_recomendations.html %}
+    {% include grouped_recomendations.html %}
+    {% include recomendations.html %}
+
+    {% include recomendations_fold.html %}
+
+    {%- endcomment -%}
+
+    {% include recomendations_fold_grouped.html %}
+
+
+    {% if page.tag[0] != "verbum" and page.tag[0] != "personality" and page.tag[0] != "ex"  %}
+    {% include date.html %}
+    {% endif %}
+
+</article>
+
+

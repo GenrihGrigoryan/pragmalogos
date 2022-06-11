@@ -1,0 +1,89 @@
+title:               Начало Умозрения
+alias:               Начало
+include:             ['_pages', '.github/workflows/python.yaml']
+exclude:             ['_notes/Шаблоны', '_notes/Personal']
+
+
+
+
+image: assets/default-big.jpg
+favicon: assets/favicon.png
+
+# You may need to change the base URL depending on your deploy configuration.
+# Specifically, when using GitHub Pages, the baseurl should point to where GitHub
+# Pages deploys your repository (which is usually the repository name).
+url: "https://origin.genrih.space"
+baseurl: 
+
+#permalink:           pretty
+#relative_permalinks: false
+
+plugins:
+  - jekyll-last-modified-at
+  - jekyll-titles-from-headings
+#  - jekyll/tagging
+
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+#Markdown
+#markdown: kramdown
+#highlighter: rouge
+#kramdown:
+#  syntax_highlighter: rouge
+
+#kramdown:
+#  auto_ids: true
+
+
+titles_from_headings:
+  enabled:     true
+  strip_title: false
+  collections: true
+
+
+#assets:
+#    sources:
+#        - '_notes/assets'
+
+
+collections:
+  notes:
+    output: true
+    permalink: /:slug
+  tagpages:
+    output: true
+    permalink: tagpage/:slug
+    sort_by: priority
+  projects:
+    output: true
+    permalink: /:slug
+    sort_by: priority
+  tagpagesearches:
+    output: true
+    permalink: tagpage/:slug
+
+
+defaults:
+  - scope:
+      path: "**/*"
+    values:
+      layout: "default"
+  - scope:
+      path: "_notes/**/*.md"
+    values:
+      layout: "note"
+  - scope:
+      path: "_tagpages/**/*.md"
+    values:
+      layout: "tag"
+  - scope:
+      path: "_projects/**/*.md"
+    values:
+      layout: "project"
+
+
+#tag_page_layout: "tag_page"
+#tag_page_dir: tag/
+#tag_permalink_style: pretty
